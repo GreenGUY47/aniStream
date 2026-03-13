@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AniStream</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <ul>
+          <!-- LEFT -->
+          <li class="nav-left">
+            <button class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <img src="" alt="" />
+          </li>
+
+          <!-- RIGHT -->
+          <li class="nav-right">
+            <button id="btn">
+              <i
+                class="fa-solid fa-magnifying-glass"
+                style="color: #de1a58"
+              ></i>
+            </button>
+            <input class="inputSearchBtn" type="text" placeholder="Search" />
+            <a href="login.html" class="loginBTN">Login/SignUp</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-overlay"></div>
+
+      <div class="openNavbar">
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Genre</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">About-us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO CAROUSEL -->
+      <section class="topView">
+        <div
+          id="default-carousel"
+          class="relative w-full"
+          data-carousel="slide"
+        >
+          <div class="carousel-inner relative overflow-hidden rounded-lg">
+            <div
+              class="hidden duration-700 ease-in-out"
+              data-carousel-item="active"
+            >
+              <a href="videoPlayer.html?show=hellparadise">
+                <img src="images/hell.jpg" alt="Hell Paradise" />
+              </a>
+              <div class="details">
+                <h2 class="seriesName">Hell Paradise</h2>
+                <p class="seriesDetail">
+                  <span
+                    ><i
+                      class="fa-regular fa-circle-play"
+                      style="color: #de1a58"
+                    ></i
+                  ></span>
+                  <span>2023</span><span>Action</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <a href="videoPlayer.html?show=jjk">
+                <img src="images/jjk.jpg" alt="JJK" />
+              </a>
+              <div class="details">
+                <h2 class="seriesName">Jujutsu Kaisen</h2>
+                <p class="seriesDetail">
+                  <span
+                    ><i
+                      class="fa-regular fa-circle-play"
+                      style="color: #de1a58"
+                    ></i
+                  ></span>
+                  <span>2023</span><span>Action</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <a href="videoPlayer.html?show=tokyoghoul">
+                <img src="images/tokyo.jpg" alt="Tokyo Ghoul" />
+              </a>
+              <div class="details">
+                <h2 class="seriesName">Tokyo Ghoul</h2>
+                <p class="seriesDetail">
+                  <span
+                    ><i
+                      class="fa-regular fa-circle-play"
+                      style="color: #de1a58"
+                    ></i
+                  ></span>
+                  <span>2014</span><span>Horror</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <a href="videoPlayer.html?show=dragonball">
+                <img src="images/dbz.jpg" alt="DBZ" />
+              </a>
+              <div class="details">
+                <h2 class="seriesName">Dragon Ball Z</h2>
+                <p class="seriesDetail">
+                  <span
+                    ><i
+                      class="fa-regular fa-circle-play"
+                      style="color: #de1a58"
+                    ></i
+                  ></span>
+                  <span>1989</span><span>Action</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <a href="videoPlayer.html?show=windbreaker">
+                <img src="images/wind.jpg" alt="Windbreaker" />
+              </a>
+              <div class="details">
+                <h2 class="seriesName">Windbreaker</h2>
+                <p class="seriesDetail">
+                  <span
+                    ><i
+                      class="fa-regular fa-circle-play"
+                      style="color: #de1a58"
+                    ></i
+                  ></span>
+                  <span>2024</span><span>Sports</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dots -->
+          <div
+            class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3"
+          >
+            <button
+              type="button"
+              class="w-3 h-3 rounded-full bg-white/50"
+              aria-label="Slide 1"
+              data-carousel-slide-to="0"
+            ></button>
+            <button
+              type="button"
+              class="w-3 h-3 rounded-full bg-white/50"
+              aria-label="Slide 2"
+              data-carousel-slide-to="1"
+            ></button>
+            <button
+              type="button"
+              class="w-3 h-3 rounded-full bg-white/50"
+              aria-label="Slide 3"
+              data-carousel-slide-to="2"
+            ></button>
+            <button
+              type="button"
+              class="w-3 h-3 rounded-full bg-white/50"
+              aria-label="Slide 4"
+              data-carousel-slide-to="3"
+            ></button>
+            <button
+              type="button"
+              class="w-3 h-3 rounded-full bg-white/50"
+              aria-label="Slide 5"
+              data-carousel-slide-to="4"
+            ></button>
+          </div>
+
+          <!-- Prev -->
+          <button
+            type="button"
+            class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer"
+            data-carousel-prev
+          >
+            <span
+              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 hover:bg-white/50"
+            >
+              <svg
+                class="w-5 h-5 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m15 19-7-7 7-7"
+                />
+              </svg>
+            </span>
+          </button>
+
+          <!-- Next -->
+          <button
+            type="button"
+            class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer"
+            data-carousel-next
+          >
+            <span
+              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 hover:bg-white/50"
+            >
+              <svg
+                class="w-5 h-5 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m9 5 7 7-7 7"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ── TOP RATED ──────────────────────────────────────── -->
+      <div class="title1"><h1>Top Rated Anime Series</h1></div>
+      <section class="animeGrid">
+        <a href="videoPlayer.html?show=windbreaker" class="img">
+          <div class="bgImage1"></div>
+          <div class="detailGrid">
+            <h3>Wind Breaker</h3>
+            <p><span>2024</span><span>Sport</span></p>
+          </div>
+        </a>
+        <a href="videoPlayer.html?show=jjk" class="img">
+          <div class="bgImage2"></div>
+          <div class="detailGrid">
+            <h3>Jujutsu Kaisen</h3>
+            <p><span>2023</span><span>Action</span></p>
+          </div>
+        </a>
+        <a href="videoPlayer.html?show=demonslayer" class="img">
+          <div class="bgImage3"></div>
+          <div class="detailGrid">
+            <h3>Demon Slayer</h3>
+            <p><span>2025</span><span>Action</span></p>
+          </div>
+        </a>
+        <a href="videoPlayer.html?show=deathnote" class="img">
+          <div class="bgImage4"></div>
+          <div class="detailGrid">
+            <h3>Death Note</h3>
+            <p><span>2017</span><span>Crime</span></p>
+          </div>
+        </a>
+        <a href="videoPlayer.html?show=naruto" class="img">
+          <div class="bgImage5"></div>
+          <div class="detailGrid">
+            <h3>Naruto</h3>
+            <p><span>2002</span><span>Action</span></p>
+          </div>
+        </a>
+      </section>
+
+      <!-- ── TRENDING ACTION ────────────────────────────────── -->
+      <div class="title1"><h1>Trending in Action</h1></div>
+      <section class="animeGrid">
+        <a href="videoPlayer.html?show=aot" class="img">
+          <div class="bgImage1"></div>
+          <div class="detailGrid">
+            <h3>Attack on Titan</h3>
+            <p><span>2013</span><span>Action</span></p>
+          </div>
+        </a>
+        <a href="videoPlayer.html?show=jjk" class="img">
+          <div class="bgImage2"></div>
+          <div class="detailGrid">
+            <h3>Jujutsu Kaisen</h3>
+            <p><span>2023</span><span>Action</span></p>
+          </div>
+        </a>
+        <a href="videoPlayer.html?show=demonslayer" class="img">
+          <div class="bgImage3"></div>
+          <div class="detailGrid">
+            <h3>Demon Slayer</h3>
+            <p><span>2025</span><span>Action</span></p>
+          </div>
+        </a>
+        <a href="videoPlayer.html?show=dragonball" class="img">
+          <div class="bgImage4"></div>
+          <div class="detailGrid">
+            <h3>Dragon Ball Z</h3>
+            <p><span>1989</span><span>Action</span></p>
+          </div>
+        </a>
+        <a href="videoPlayer.html?show=naruto" class="img">
+          <div class="bgImage5"></div>
+          <div class="detailGrid">
+            <h3>Naruto</h3>
+            <p><span>2002</span><span>Action</span></p>
+          </div>
+        </a>
+      </section>
+
+      <!-- ── HORROR ─────────────────────────────────────────── -->
+      <div class="title1"><h1>Horror</h1></div>
+      <section class="animeGrid">
+        <a href="videoPlayer.html?show=tokyoghoul" class="img">
+          <div class="bgImage1"></div>
+          <div class="detailGrid">
+            <h3>Tokyo Ghoul</h3>
+            <p><span>2014</span><span>Horror</span></p>
+          </div>
+        </a>
+        <a href="videoPlayer.html?show=jjk" class="img">
+          <div class="bgImage2"></div>
+          <div class="detailGrid">
+            <h3>Jujutsu Kaisen</h3>
+            <p><span>2023</span><span>Horror</span></p>
+          </div>
+        </a>
+        <a href="videoPlayer.html?show=demonslayer" class="img">
+          <div class="bgImage3"></div>
+          <div class="detailGrid">
+            <h3>Demon Slayer</h3>
+            <p><span>2025</span><span>Action</span></p>
+          </div>
+        </a>
+        <a href="videoPlayer.html?show=deathnote" class="img">
+          <div class="bgImage4"></div>
+          <div class="detailGrid">
+            <h3>Death Note</h3>
+            <p><span>2017</span><span>Crime</span></p>
+          </div>
+        </a>
+        <a href="videoPlayer.html?show=hellparadise" class="img">
+          <div class="bgImage5"></div>
+          <div class="detailGrid">
+            <h3>Hell Paradise</h3>
+            <p><span>2023</span><span>Horror</span></p>
+          </div>
+        </a>
+      </section>
+
+      <!-- ── DRAMA ──────────────────────────────────────────── -->
+      <div class="title1"><h1>Drama Series</h1></div>
+      <section class="animeGrid">
+        <a href="videoPlayer.html?show=windbreaker" class="img">
+          <div class="bgImage1"></div>
+          <div class="detailGrid">
+            <h3>Wind Breaker</h3>
+            <p><span>2024</span><span>Sport</span></p>
+          </div>
+        </a>
+        <a href="videoPlayer.html?show=aot" class="img">
+          <div class="bgImage2"></div>
+          <div class="detailGrid">
+            <h3>Attack on Titan</h3>
+            <p><span>2013</span><span>Drama</span></p>
+          </div>
+        </a>
+        <a href="videoPlayer.html?show=demonslayer" class="img">
+          <div class="bgImage3"></div>
+          <div class="detailGrid">
+            <h3>Demon Slayer</h3>
+            <p><span>2025</span><span>Action</span></p>
+          </div>
+        </a>
+        <a href="videoPlayer.html?show=deathnote" class="img">
+          <div class="bgImage4"></div>
+          <div class="detailGrid">
+            <h3>Death Note</h3>
+            <p><span>2017</span><span>Crime</span></p>
+          </div>
+        </a>
+        <a href="videoPlayer.html?show=naruto" class="img">
+          <div class="bgImage5"></div>
+          <div class="detailGrid">
+            <h3>Naruto</h3>
+            <p><span>2002</span><span>Action</span></p>
+          </div>
+        </a>
+      </section>
+
+      <!-- ── NEW RELEASE MOVIES ─────────────────────────────── -->
+      <div class="title1"><h1>New Release Movies</h1></div>
+      <section class="animeGrid">
+        <a href="videoPlayer.html?show=windbreaker" class="img">
+          <div class="bgImage1"></div>
+          <div class="detailGrid">
+            <h3>Wind Breaker</h3>
+            <p><span>2024</span><span>Sport</span></p>
+          </div>
+        </a>
+        <a href="videoPlayer.html?show=jjk" class="img">
+          <div class="bgImage2"></div>
+          <div class="detailGrid">
+            <h3>Jujutsu Kaisen</h3>
+            <p><span>2023</span><span>Action</span></p>
+          </div>
+        </a>
+        <a href="videoPlayer.html?show=demonslayer" class="img">
+          <div class="bgImage3"></div>
+          <div class="detailGrid">
+            <h3>Demon Slayer</h3>
+            <p><span>2025</span><span>Action</span></p>
+          </div>
+        </a>
+        <a href="videoPlayer.html?show=dragonball" class="img">
+          <div class="bgImage4"></div>
+          <div class="detailGrid">
+            <h3>Dragon Ball Z</h3>
+            <p><span>1989</span><span>Action</span></p>
+          </div>
+        </a>
+        <a href="videoPlayer.html?show=hellparadise" class="img">
+          <div class="bgImage5"></div>
+          <div class="detailGrid">
+            <h3>Hell Paradise</h3>
+            <p><span>2023</span><span>Action</span></p>
+          </div>
+        </a>
+      </section>
+    </main>
+
+    <footer>
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <i class="fa-solid fa-play"></i>
+              <span>AniStream</span>
+            </div>
+            <p class="footer-desc">
+              Your ultimate destination for anime. Stream thousands of episodes
+              anytime, anywhere.
+            </p>
+            <div class="footer-socials">
+              <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-discord"></i></a>
+              <a href="#"><i class="fa-brands fa-youtube"></i></a>
+              <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <div class="footer-col">
+              <h4>Browse</h4>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Trending</a></li>
+                <li><a href="#">New Releases</a></li>
+                <li><a href="#">Top Rated</a></li>
+                <li><a href="#">Movies</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Genres</h4>
+              <ul>
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Horror</a></li>
+                <li><a href="#">Romance</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Drama</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Account</h4>
+              <ul>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="#">Watchlist</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Help</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-newsletter">
+            <h4>Stay Updated</h4>
+            <p>Get notified when new episodes drop.</p>
+            <div class="newsletter-form">
+              <input type="email" placeholder="Enter your email" />
+              <button>Subscribe</button>
+            </div>
+            <div class="footer-badges">
+              <div class="badge">
+                <i class="fa-brands fa-apple"></i><span>App Store</span>
+              </div>
+              <div class="badge">
+                <i class="fa-brands fa-google-play"></i><span>Google Play</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+          <p>© 2024 AniStream. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+      </footer>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

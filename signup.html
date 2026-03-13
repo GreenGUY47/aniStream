@@ -1,0 +1,1033 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AniStream — Sign Up</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Bebas+Neue&display=swap");
+
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --red: #de1a58;
+        --bg: #0e0e10;
+        --surface: #18181c;
+        --border: rgba(222, 26, 88, 0.25);
+        --text: #e8e8e8;
+        --muted: rgba(232, 232, 232, 0.4);
+      }
+
+      body {
+        background: var(--bg);
+        font-family: "Rajdhani", sans-serif;
+        color: var(--text);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px 16px;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(222, 26, 88, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(222, 26, 88, 0.04) 1px, transparent 1px);
+        background-size: 40px 40px;
+        z-index: 0;
+        animation: gridShift 20s linear infinite;
+      }
+
+      @keyframes gridShift {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 40px 40px;
+        }
+      }
+
+      .blob {
+        position: fixed;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.15;
+        z-index: 0;
+        animation: blobFloat 8s ease-in-out infinite alternate;
+      }
+      .blob1 {
+        width: 400px;
+        height: 400px;
+        background: var(--red);
+        top: -100px;
+        right: -100px;
+      }
+      .blob2 {
+        width: 300px;
+        height: 300px;
+        background: #ff6b9d;
+        bottom: -80px;
+        left: -80px;
+        animation-delay: -4s;
+      }
+
+      @keyframes blobFloat {
+        0% {
+          transform: translate(0, 0) scale(1);
+        }
+        100% {
+          transform: translate(20px, 30px) scale(1.1);
+        }
+      }
+
+      .signup-wrapper {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 460px;
+        animation: fadeUp 0.5s ease both;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .signup-card {
+        background: rgba(24, 24, 28, 0.85);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 40px 36px;
+        backdrop-filter: blur(20px);
+        box-shadow:
+          0 0 60px rgba(222, 26, 88, 0.08),
+          0 24px 48px rgba(0, 0, 0, 0.5);
+      }
+
+      .signup-header {
+        text-align: center;
+        margin-bottom: 28px;
+      }
+
+      .signup-logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 18px;
+        text-decoration: none;
+      }
+
+      .logo-icon {
+        width: 36px;
+        height: 36px;
+        background: var(--red);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 0.85rem;
+      }
+
+      .logo-text {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.8rem;
+        letter-spacing: 0.08em;
+        color: var(--text);
+      }
+
+      .signup-header h1 {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 2rem;
+        letter-spacing: 0.06em;
+        margin-bottom: 6px;
+      }
+
+      .signup-header p {
+        font-size: 0.88rem;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      .form-group {
+        margin-bottom: 18px;
+      }
+
+      .form-group label {
+        display: block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 7px;
+        transition: color 0.2s;
+      }
+
+      .form-group:focus-within label {
+        color: var(--red);
+      }
+
+      .input-wrap {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+
+      .input-icon {
+        position: absolute;
+        left: 13px;
+        color: var(--muted);
+        font-size: 0.85rem;
+        pointer-events: none;
+        transition: color 0.2s;
+      }
+
+      .form-group:focus-within .input-icon {
+        color: var(--red);
+      }
+
+      .input-wrap input,
+      .input-wrap select {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+        padding: 11px 14px 11px 38px;
+        color: var(--text);
+        font-family: "Rajdhani", sans-serif;
+        font-size: 0.95rem;
+        font-weight: 600;
+        outline: none;
+        transition:
+          border-color 0.2s,
+          background 0.2s,
+          box-shadow 0.2s;
+        appearance: none;
+      }
+
+      .input-wrap input::placeholder {
+        color: rgba(255, 255, 255, 0.18);
+        font-weight: 400;
+      }
+
+      .input-wrap input:focus,
+      .input-wrap select:focus {
+        border-color: var(--red);
+        background: rgba(222, 26, 88, 0.05);
+        box-shadow: 0 0 0 3px rgba(222, 26, 88, 0.1);
+      }
+
+      .input-wrap input.error {
+        border-color: #ff4444;
+        box-shadow: 0 0 0 3px rgba(255, 68, 68, 0.1);
+      }
+      .input-wrap input.success {
+        border-color: #22c55e;
+        box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+      }
+
+      .toggle-pw {
+        position: absolute;
+        right: 12px;
+        background: none;
+        border: none;
+        color: var(--muted);
+        cursor: pointer;
+        font-size: 0.85rem;
+        transition: color 0.2s;
+        padding: 4px;
+      }
+      .toggle-pw:hover {
+        color: var(--red);
+      }
+
+      .error-msg {
+        display: none;
+        align-items: center;
+        gap: 5px;
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: #ff6b6b;
+        margin-top: 5px;
+      }
+      .error-msg.show {
+        display: flex;
+      }
+
+      .success-msg {
+        display: none;
+        align-items: center;
+        gap: 5px;
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: #22c55e;
+        margin-top: 5px;
+      }
+      .success-msg.show {
+        display: flex;
+      }
+
+      .char-count {
+        font-size: 0.68rem;
+        color: var(--muted);
+        text-align: right;
+        margin-top: 3px;
+      }
+      .char-count.warn {
+        color: #f59e0b;
+      }
+      .char-count.limit {
+        color: #ff4444;
+      }
+
+      .password-strength {
+        margin-top: 8px;
+      }
+
+      .strength-bars {
+        display: flex;
+        gap: 4px;
+        margin-bottom: 4px;
+      }
+
+      .strength-bar {
+        flex: 1;
+        height: 3px;
+        border-radius: 2px;
+        background: rgba(255, 255, 255, 0.08);
+        transition: background 0.3s;
+      }
+
+      .strength-bar.weak {
+        background: #ff4444;
+      }
+      .strength-bar.fair {
+        background: #f59e0b;
+      }
+      .strength-bar.good {
+        background: #22c55e;
+      }
+      .strength-bar.strong {
+        background: #16a34a;
+      }
+
+      .strength-label {
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: var(--muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .terms {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .terms input[type="checkbox"] {
+        display: none;
+      }
+
+      .checkbox-box {
+        width: 17px;
+        height: 17px;
+        border: 1.5px solid rgba(255, 255, 255, 0.15);
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-top: 2px;
+        transition:
+          border-color 0.2s,
+          background 0.2s;
+      }
+
+      .terms input:checked ~ .checkbox-box {
+        border-color: var(--red);
+        background: var(--red);
+      }
+
+      .checkbox-box i {
+        color: #fff;
+        font-size: 0.6rem;
+        display: none;
+      }
+      .terms input:checked ~ .checkbox-box i {
+        display: block;
+      }
+
+      .terms-text {
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .terms-text a {
+        color: var(--red);
+        text-decoration: none;
+      }
+      .terms-text a:hover {
+        text-decoration: underline;
+      }
+
+      .terms-error {
+        display: none;
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: #ff6b6b;
+        margin-top: -12px;
+        margin-bottom: 16px;
+      }
+      .terms-error.show {
+        display: block;
+      }
+
+      .signup-btn {
+        width: 100%;
+        background: var(--red);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 13px;
+        font-family: "Rajdhani", sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition:
+          background 0.2s,
+          transform 0.15s,
+          box-shadow 0.2s;
+        margin-bottom: 20px;
+      }
+
+      .signup-btn:hover {
+        background: #f52065;
+        transform: translateY(-1px);
+        box-shadow: 0 8px 24px rgba(222, 26, 88, 0.35);
+      }
+      .signup-btn:active {
+        transform: translateY(0);
+      }
+      .signup-btn.loading {
+        pointer-events: none;
+        opacity: 0.8;
+      }
+
+      .divider {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+      .divider::before,
+      .divider::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.06);
+      }
+      .divider span {
+        font-size: 0.72rem;
+        color: var(--muted);
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .social-btns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .social-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+        color: var(--text);
+        font-family: "Rajdhani", sans-serif;
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        transition:
+          background 0.2s,
+          border-color 0.2s;
+      }
+      .social-btn:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.15);
+      }
+
+      .login-link {
+        text-align: center;
+        font-size: 0.85rem;
+        color: var(--muted);
+        font-weight: 600;
+      }
+      .login-link a {
+        color: var(--red);
+        text-decoration: none;
+        font-weight: 700;
+      }
+      .login-link a:hover {
+        opacity: 0.75;
+      }
+
+      .toast {
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%) translateY(80px);
+        background: #1e1e24;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--text);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease;
+        z-index: 100;
+        white-space: nowrap;
+      }
+      .toast.show {
+        transform: translateX(-50%) translateY(0);
+      }
+      .toast.success i {
+        color: #22c55e;
+      }
+      .toast.error i {
+        color: #ff4444;
+      }
+
+      @media (max-width: 480px) {
+        .signup-card {
+          padding: 28px 18px;
+        }
+        .form-row {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+        .social-btns {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+
+    <div class="signup-wrapper">
+      <div class="signup-card">
+        <div class="signup-header">
+          <a href="index.html" class="signup-logo">
+            <div class="logo-icon"><i class="fa-solid fa-play"></i></div>
+            <span class="logo-text">AniStream</span>
+          </a>
+          <h1>Create Account</h1>
+          <p>Join millions of anime fans today</p>
+        </div>
+
+        <form id="signupForm" novalidate>
+          <div class="form-row">
+            <!-- First Name -->
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <div class="input-wrap">
+                <i class="fa-solid fa-user input-icon"></i>
+                <input
+                  type="text"
+                  id="firstName"
+                  placeholder="Ali"
+                  maxlength="20"
+                />
+              </div>
+              <div class="error-msg" id="fn-error">
+                <i class="fa-solid fa-circle-exclamation"></i><span></span>
+              </div>
+              <div class="success-msg" id="fn-success">
+                <i class="fa-solid fa-circle-check"></i><span>Good</span>
+              </div>
+            </div>
+
+            <!-- Last Name -->
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <div class="input-wrap">
+                <i class="fa-solid fa-user input-icon"></i>
+                <input
+                  type="text"
+                  id="lastName"
+                  placeholder="Khan"
+                  maxlength="20"
+                />
+              </div>
+              <div class="error-msg" id="ln-error">
+                <i class="fa-solid fa-circle-exclamation"></i><span></span>
+              </div>
+              <div class="success-msg" id="ln-success">
+                <i class="fa-solid fa-circle-check"></i><span>Good</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Username -->
+          <div class="form-group">
+            <label for="username">Username</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-at input-icon"></i>
+              <input
+                type="text"
+                id="username"
+                placeholder="e.g. AliKhan99"
+                minlength="3"
+                maxlength="25"
+              />
+            </div>
+            <div class="char-count" id="user-count">0 / 25</div>
+            <div class="error-msg" id="user-error">
+              <i class="fa-solid fa-circle-exclamation"></i><span></span>
+            </div>
+            <div class="success-msg" id="user-success">
+              <i class="fa-solid fa-circle-check"></i
+              ><span>Username available!</span>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-envelope input-icon"></i>
+              <input
+                type="email"
+                id="email"
+                placeholder="ali@example.com"
+                maxlength="60"
+              />
+            </div>
+            <div class="error-msg" id="email-error">
+              <i class="fa-solid fa-circle-exclamation"></i><span></span>
+            </div>
+            <div class="success-msg" id="email-success">
+              <i class="fa-solid fa-circle-check"></i><span>Valid email!</span>
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="form-group">
+            <label for="password">Password</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-lock input-icon"></i>
+              <input
+                type="password"
+                id="password"
+                placeholder="Min 8 characters"
+                minlength="8"
+                maxlength="50"
+              />
+              <button type="button" class="toggle-pw" id="togglePw1">
+                <i class="fa-solid fa-eye" id="eye1"></i>
+              </button>
+            </div>
+            <div
+              class="password-strength"
+              id="strengthBox"
+              style="display: none"
+            >
+              <div class="strength-bars">
+                <div class="strength-bar" id="bar1"></div>
+                <div class="strength-bar" id="bar2"></div>
+                <div class="strength-bar" id="bar3"></div>
+                <div class="strength-bar" id="bar4"></div>
+              </div>
+              <div class="strength-label" id="strengthLabel">Weak</div>
+            </div>
+            <div class="error-msg" id="pass-error">
+              <i class="fa-solid fa-circle-exclamation"></i><span></span>
+            </div>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-lock input-icon"></i>
+              <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Repeat password"
+                maxlength="50"
+              />
+              <button type="button" class="toggle-pw" id="togglePw2">
+                <i class="fa-solid fa-eye" id="eye2"></i>
+              </button>
+            </div>
+            <div class="error-msg" id="confirm-error">
+              <i class="fa-solid fa-circle-exclamation"></i><span></span>
+            </div>
+            <div class="success-msg" id="confirm-success">
+              <i class="fa-solid fa-circle-check"></i
+              ><span>Passwords match!</span>
+            </div>
+          </div>
+
+          <!-- Terms -->
+          <label class="terms">
+            <input type="checkbox" id="terms" />
+            <div class="checkbox-box"><i class="fa-solid fa-check"></i></div>
+            <span class="terms-text"
+              >I agree to the <a href="#">Terms of Service</a> and
+              <a href="#">Privacy Policy</a></span
+            >
+          </label>
+          <div class="terms-error" id="terms-error">
+            You must accept the terms to continue.
+          </div>
+
+          <button type="submit" class="signup-btn" id="signupBtn">
+            <span id="btnText">Create Account</span>
+          </button>
+        </form>
+
+        <div class="divider"><span>or sign up with</span></div>
+
+        <div class="social-btns">
+          <a href="#" class="social-btn"
+            ><i class="fa-brands fa-google"></i> Google</a
+          >
+          <a href="#" class="social-btn"
+            ><i class="fa-brands fa-discord"></i> Discord</a
+          >
+        </div>
+
+        <p class="login-link">
+          Already have an account? <a href="login.html">Sign In</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="toast" id="toast">
+      <i class="fa-solid fa-circle-check"></i>
+      <span id="toastMsg">Account created!</span>
+    </div>
+
+    <script>
+      function fe(id) {
+        return document.getElementById(id);
+      }
+
+      const fields = {
+        firstName: {
+          input: fe("firstName"),
+          error: fe("fn-error"),
+          success: fe("fn-success"),
+        },
+        lastName: {
+          input: fe("lastName"),
+          error: fe("ln-error"),
+          success: fe("ln-success"),
+        },
+        username: {
+          input: fe("username"),
+          error: fe("user-error"),
+          success: fe("user-success"),
+        },
+        email: {
+          input: fe("email"),
+          error: fe("email-error"),
+          success: fe("email-success"),
+        },
+        password: {
+          input: fe("password"),
+          error: fe("pass-error"),
+          success: null,
+        },
+        confirmPassword: {
+          input: fe("confirmPassword"),
+          error: fe("confirm-error"),
+          success: fe("confirm-success"),
+        },
+      };
+
+      function setError(f, msg) {
+        f.input.classList.add("error");
+        f.input.classList.remove("success");
+        f.error.querySelector("span").textContent = msg;
+        f.error.classList.add("show");
+        if (f.success) f.success.classList.remove("show");
+      }
+
+      function setSuccess(f) {
+        f.input.classList.remove("error");
+        f.input.classList.add("success");
+        f.error.classList.remove("show");
+        if (f.success) f.success.classList.add("show");
+      }
+
+      function clearField(f) {
+        f.input.classList.remove("error", "success");
+        f.error.classList.remove("show");
+        if (f.success) f.success.classList.remove("show");
+      }
+
+      function validateName(f, label) {
+        const v = f.input.value.trim();
+        if (!v) {
+          setError(f, `${label} is required.`);
+          return false;
+        }
+        if (v.length < 2) {
+          setError(f, `At least 2 characters.`);
+          return false;
+        }
+        if (!/^[a-zA-Z\s]+$/.test(v)) {
+          setError(f, `Letters only.`);
+          return false;
+        }
+        setSuccess(f);
+        return true;
+      }
+
+      function validateUsername() {
+        const f = fields.username,
+          v = f.input.value.trim();
+        if (!v) {
+          setError(f, "Username is required.");
+          return false;
+        }
+        if (v.length < 3) {
+          setError(f, "At least 3 characters.");
+          return false;
+        }
+        if (!/^[a-zA-Z0-9_]+$/.test(v)) {
+          setError(f, "Letters, numbers and _ only.");
+          return false;
+        }
+        setSuccess(f);
+        return true;
+      }
+
+      function validateEmail() {
+        const f = fields.email,
+          v = f.input.value.trim();
+        if (!v) {
+          setError(f, "Email is required.");
+          return false;
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) {
+          setError(f, "Enter a valid email address.");
+          return false;
+        }
+        setSuccess(f);
+        return true;
+      }
+
+      function getStrength(pw) {
+        let score = 0;
+        if (pw.length >= 8) score++;
+        if (pw.length >= 12) score++;
+        if (/[A-Z]/.test(pw) && /[a-z]/.test(pw)) score++;
+        if (/[0-9]/.test(pw)) score++;
+        if (/[^a-zA-Z0-9]/.test(pw)) score++;
+        return Math.min(4, score);
+      }
+
+      function updateStrength(pw) {
+        const box = fe("strengthBox");
+        if (!pw) {
+          box.style.display = "none";
+          return;
+        }
+        box.style.display = "block";
+        const score = getStrength(pw);
+        const bars = [fe("bar1"), fe("bar2"), fe("bar3"), fe("bar4")];
+        const cls = ["weak", "fair", "good", "strong"];
+        const labels = ["Weak", "Fair", "Good", "Strong"];
+        bars.forEach((b, i) => {
+          b.className =
+            "strength-bar" + (i < score ? " " + cls[score - 1] : "");
+        });
+        fe("strengthLabel").textContent = labels[score - 1] || "Weak";
+        fe("strengthLabel").style.color =
+          ["#ff4444", "#f59e0b", "#22c55e", "#16a34a"][score - 1] || "#ff4444";
+      }
+
+      function validatePassword() {
+        const f = fields.password,
+          v = f.input.value;
+        if (!v) {
+          setError(f, "Password is required.");
+          return false;
+        }
+        if (v.length < 8) {
+          setError(f, "At least 8 characters required.");
+          return false;
+        }
+        f.input.classList.remove("error");
+        f.error.classList.remove("show");
+        return true;
+      }
+
+      function validateConfirm() {
+        const f = fields.confirmPassword,
+          v = f.input.value;
+        const pw = fields.password.input.value;
+        if (!v) {
+          setError(f, "Please confirm your password.");
+          return false;
+        }
+        if (v !== pw) {
+          setError(f, "Passwords do not match.");
+          return false;
+        }
+        setSuccess(f);
+        return true;
+      }
+
+      function showToast(msg, type = "success") {
+        const toast = fe("toast");
+        fe("toastMsg").textContent = msg;
+        toast.className = `toast ${type}`;
+        toast.querySelector("i").className =
+          type === "success"
+            ? "fa-solid fa-circle-check"
+            : "fa-solid fa-circle-xmark";
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 3500);
+      }
+
+      // Live events
+      fields.firstName.input.addEventListener("blur", () =>
+        validateName(fields.firstName, "First name"),
+      );
+      fields.lastName.input.addEventListener("blur", () =>
+        validateName(fields.lastName, "Last name"),
+      );
+      fields.username.input.addEventListener("blur", validateUsername);
+      fields.email.input.addEventListener("blur", validateEmail);
+      fields.password.input.addEventListener("blur", validatePassword);
+      fields.confirmPassword.input.addEventListener("blur", validateConfirm);
+
+      fields.username.input.addEventListener("input", () => {
+        const len = fields.username.input.value.length;
+        const counter = fe("user-count");
+        counter.textContent = `${len} / 25`;
+        counter.className =
+          "char-count" + (len >= 25 ? " limit" : len >= 20 ? " warn" : "");
+        if (
+          fields.username.input.classList.contains("error") ||
+          fields.username.input.classList.contains("success")
+        )
+          validateUsername();
+      });
+
+      fields.password.input.addEventListener("input", () => {
+        updateStrength(fields.password.input.value);
+        if (fields.password.input.classList.contains("error"))
+          validatePassword();
+        if (fields.confirmPassword.input.value) validateConfirm();
+      });
+
+      fields.confirmPassword.input.addEventListener("input", () => {
+        if (
+          fields.confirmPassword.input.classList.contains("error") ||
+          fields.confirmPassword.input.classList.contains("success")
+        )
+          validateConfirm();
+      });
+
+      // Password toggles
+      function makeToggle(btnId, eyeId, inputId) {
+        fe(btnId).addEventListener("click", () => {
+          const inp = fe(inputId);
+          const hidden = inp.type === "password";
+          inp.type = hidden ? "text" : "password";
+          fe(eyeId).className = hidden
+            ? "fa-solid fa-eye-slash"
+            : "fa-solid fa-eye";
+        });
+      }
+      makeToggle("togglePw1", "eye1", "password");
+      makeToggle("togglePw2", "eye2", "confirmPassword");
+
+      fe("signupForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const termsEl = fe("terms-error");
+        const v1 = validateName(fields.firstName, "First name");
+        const v2 = validateName(fields.lastName, "Last name");
+        const v3 = validateUsername();
+        const v4 = validateEmail();
+        const v5 = validatePassword();
+        const v6 = validateConfirm();
+        const v7 = fe("terms").checked;
+        termsEl.classList.toggle("show", !v7);
+
+        if (!v1 || !v2 || !v3 || !v4 || !v5 || !v6 || !v7) {
+          showToast("Please fix the errors above.", "error");
+          return;
+        }
+
+        const btn = fe("signupBtn");
+        btn.classList.add("loading");
+        fe("btnText").textContent = "Creating account...";
+        setTimeout(() => {
+          btn.classList.remove("loading");
+          fe("btnText").textContent = "Create Account";
+          showToast(
+            "Welcome to AniStream, " +
+              fields.firstName.input.value.trim() +
+              "!",
+            "success",
+          );
+        }, 1800);
+      });
+    </script>
+  </body>
+</html>

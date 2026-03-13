@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <ul>
+          <!-- LEFT -->
+          <li class="nav-left">
+            <button class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <img src="" alt="" />
+          </li>
+
+          <!-- RIGHT -->
+          <li class="nav-right">
+            <button id="btn">
+              <i
+                class="fa-solid fa-magnifying-glass"
+                style="color: #de1a58"
+              ></i>
+            </button>
+            <input class="inputSearchBtn" type="text" placeholder="Search" />
+            <a href="login.html" class="loginBTN">Login/SignUp</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-overlay"></div>
+
+      <div class="openNavbar">
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Genre</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">About-us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="videoPlayer">
+        <div class="video"></div>
+      </section>
+    </main>
+    <footer>
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <i class="fa-solid fa-play"></i>
+              <span>AniStream</span>
+            </div>
+            <p class="footer-desc">
+              Your ultimate destination for anime. Stream thousands of episodes
+              anytime, anywhere.
+            </p>
+            <div class="footer-socials">
+              <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-discord"></i></a>
+              <a href="#"><i class="fa-brands fa-youtube"></i></a>
+              <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <div class="footer-col">
+              <h4>Browse</h4>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Trending</a></li>
+                <li><a href="#">New Releases</a></li>
+                <li><a href="#">Top Rated</a></li>
+                <li><a href="#">Movies</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Genres</h4>
+              <ul>
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Horror</a></li>
+                <li><a href="#">Romance</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Drama</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Account</h4>
+              <ul>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="#">Watchlist</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Help</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-newsletter">
+            <h4>Stay Updated</h4>
+            <p>Get notified when new episodes drop.</p>
+            <div class="newsletter-form">
+              <input type="email" placeholder="Enter your email" />
+              <button>Subscribe</button>
+            </div>
+            <div class="footer-badges">
+              <div class="badge">
+                <i class="fa-brands fa-apple"></i><span>App Store</span>
+              </div>
+              <div class="badge">
+                <i class="fa-brands fa-google-play"></i><span>Google Play</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+          <p>© 2024 AniStream. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+      </footer>
+    </footer>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
