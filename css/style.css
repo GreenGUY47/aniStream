@@ -388,11 +388,11 @@ header {
   transition: transform 0.4s ease;
 }
 
-.bgImage1 { background-image: url('../images/windgrid.webp'); }
-.bgImage2 { background-image: url('../images/jjkgrid.webp'); }
-.bgImage3 { background-image: url('../images/demongrid.webp'); }
-.bgImage4 { background-image: url('../images/deathgrid.webp'); }
-.bgImage5 { background-image: url('../images/naruto.webp'); }
+.bgImage1 { background-image: url('/images/windgrid.webp'); }
+.bgImage2 { background-image: url('/images/jjkgrid.webp'); }
+.bgImage3 { background-image: url('/images/demongrid.webp'); }
+.bgImage4 { background-image: url('/images/deathgrid.webp'); }
+.bgImage5 { background-image: url('/images/naruto.webp'); }
 
 .img:hover .bgImage1,
 .img:hover .bgImage2,
